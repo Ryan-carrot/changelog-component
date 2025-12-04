@@ -39,29 +39,15 @@ h1 {
 #log-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 2rem;
     margin-top: 3rem;
 }
 
-#log-container ul {
-    list-style: none;
+#log-container ul, #entry-list ul, #date-list ul {
     padding: 0;
 }
 
 #log-container li {
     color: var(--text-color);
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0;
-    border-radius: 5px;
-}
-
-#date-list li:hover,
-#entry-list li:hover {
-    background-color: var(--accent-color);
-    color: white;
-    cursor: pointer;
 }
 
 #date-list, #entry-list {
@@ -77,6 +63,56 @@ h1 {
     align-items: flex-start;
 }
 
+#date-list li, #entry-list li {
+    list-style: none;  
+    padding: 1rem 2rem;
+}
+
+#entry-list li {
+    position: relative;
+    border-left: 0.125rem solid var(--text-color);
+}
+
+#entry-list li::before {
+    content: '•';
+    position: absolute;
+    left: -0.813rem;
+    top: 50%;
+    transform: translateY(-54%);
+    color: var(--text-color);
+    font-size: 5rem;
+}
+
+#entry-list li:nth-child(odd), #date-list li:nth-child(odd) {
+    background-color: #e0e0e0;
+}
+
+#entry-list li:hover, #date-list li:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+}
+
+/*button styles*/
+.button-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#more-btn {
+    background-color: var(--text-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.313rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#more-btn:hover {
+    background-color: var(--secondary-color);
+}
 
 /*footer styles*/
 footer {
@@ -84,7 +120,8 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    position: fixed;
     width: 100%;
     bottom: 0;
 }
+
+/*responsive styles*/
