@@ -36,85 +36,56 @@ h1 {
 }
 
 /*log styles*/
-#log-container {
+.log-headers {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    margin-top: 3rem;
-}
-
-#log-container ul, #entry-list ul, #date-list ul {
-    padding: 0;
-}
-
-#log-container li {
+    gap: 5rem;
+    padding: 1rem 2rem;
     color: var(--text-color);
 }
 
-#date-list, #entry-list {
-    display: flex;
-    flex-direction: column;
+.date-header {
+    font-weight: bold;
+    text-align: right;
 }
 
-#date-list {
-    align-items: flex-end;
-}
-
-#entry-list {
-    align-items: flex-start;
-}
-
-#date-list li, #entry-list li {
-    list-style: none;  
+.entry {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
     padding: 1rem 2rem;
 }
 
-#entry-list li {
-    position: relative;
-    border-left: 0.125rem solid var(--text-color);
+.date {
+    justify-self: flex-end;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-#entry-list li::before {
-    content: '•';
-    position: absolute;
-    left: -0.813rem;
-    top: 50%;
-    transform: translateY(-54%);
-    color: var(--text-color);
-    font-size: 5rem;
+.change-description {
+    justify-self: flex-start ;
+    margin-bottom: 1rem;
 }
 
-#entry-list li:nth-child(odd), #date-list li:nth-child(odd) {
-    background-color: #e0e0e0;
-}
-
-#entry-list li:hover, #date-list li:hover {
-    background-color: var(--secondary-color);
-    color: white;
-    cursor: pointer;
-}
-
-/*button styles*/
 .button-container {
     text-align: center;
     margin: 2rem 0;
 }
 
 #more-btn {
-    background-color: var(--text-color);
+    background-color: var(--secondary-color);
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 0.313rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 #more-btn:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
 }
 
-/*footer styles*/
 footer {
     background-color: var(--primary-color);
     color: white;
@@ -123,5 +94,3 @@ footer {
     width: 100%;
     bottom: 0;
 }
-
-/*responsive styles*/
