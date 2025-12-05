@@ -36,35 +36,43 @@ h1 {
 }
 
 /*log styles*/
-.log-headers {
+.log-headers, .entry {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 5rem;
     padding: 1rem 2rem;
-    color: var(--text-color);
+}
+
+.log-headers {
+    margin: 1rem 0;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .date-header {
-    font-weight: bold;
     text-align: right;
 }
 
 .entry {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 5rem;
-    padding: 1rem 2rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.entry:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .date {
     justify-self: flex-end;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .change-description {
     justify-self: flex-start ;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .button-container {
@@ -86,6 +94,7 @@ h1 {
     background-color: var(--accent-color);
 }
 
+/*footer styles*/
 footer {
     background-color: var(--primary-color);
     color: white;
@@ -93,4 +102,16 @@ footer {
     padding: 1rem;
     width: 100%;
     bottom: 0;
+}
+
+/*responsive styles*/
+@media (max-width: 600px) {
+    .log-headers, .entry {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .date-header {
+        text-align: left;
+    }
 }
